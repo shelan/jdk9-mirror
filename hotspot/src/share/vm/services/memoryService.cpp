@@ -559,7 +559,7 @@ Handle MemoryService::create_MemoryUsage_obj(MemoryUsage usage, TRAPS) {
 // _fullGC is set to false ) and for other generation kinds doing
 // mark-sweep-compact uses major gc manager (so _fullGC is set to true).
 
-//Shelan
+//ist14
 TraceMemoryManagerStats::TraceMemoryManagerStats(Generation::Name kind, GCCause::Cause cause ,double allocRate) {
   switch (kind) {
     case Generation::DefNew:
@@ -580,7 +580,7 @@ TraceMemoryManagerStats::TraceMemoryManagerStats(Generation::Name kind, GCCause:
   // this has to be called in a stop the world pause and represent
   // an entire gc pause, start to finish:
 
- //Shelan
+ //ist14
   initialize(_fullGC, cause, allocRate, true, true, true, true, true, true, true);
  }
 
@@ -598,7 +598,7 @@ TraceMemoryManagerStats::TraceMemoryManagerStats(bool fullGC,
                recordPeakUsage, recordPostGCUsage, recordAccumulatedGCTime,
                recordGCEndTime, countCollection);
 }
-//Shelan
+//ist14
 
 
 TraceMemoryManagerStats::TraceMemoryManagerStats(bool fullGC,

@@ -609,7 +609,7 @@ JVM_ENTRY(jobjectArray, jmm_GetMemoryPools(JNIEnv* env, jobject obj))
 JVM_END
 
 
-//Shelan
+//ist14
 /************* ***********************/
 // Returns the allocation rate for a given memory manager.
 JVM_ENTRY(jdouble, jmm_GetAllocationRate(JNIEnv* env, jobject obj))

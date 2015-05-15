@@ -40,7 +40,7 @@
 MemoryManager::MemoryManager() {
   _num_pools = 0;
   (void)const_cast<instanceOop&>(_memory_mgr_obj = instanceOop(NULL));
-  //Shelan
+  //ist14
    _allocation_rate = -1;
 }
 

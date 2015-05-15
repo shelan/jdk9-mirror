@@ -88,13 +88,13 @@ class MemoryManagerImpl extends NotificationEmitterSupport
         return notifInfo;
     }
 
-//Shelan    
+//ist14    
    public synchronized double getAllocationRate() {
         return getAllocationRate0();
     }
 
     private native double getAllocationRate0();
-//Shelan
+//ist14
 
     public ObjectName getObjectName() {
         return Util.newObjectName(ManagementFactory.MEMORY_MANAGER_MXBEAN_DOMAIN_TYPE, getName());

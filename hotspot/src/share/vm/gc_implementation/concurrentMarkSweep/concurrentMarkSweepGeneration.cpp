@@ -1653,10 +1653,10 @@ void CMSCollector::do_compaction_work(bool clear_all_soft_refs) {
                                             _intra_sweep_estimate.padded_average());
   }
 
-//Shelan
-TraceCMSMemoryManagerStats tmms(_collectorState,gch->gc_cause(), 3000);
+//ist14
+TraceCMSMemoryManagerStats tmms(_collectorState,gch->gc_cause(), stats().cms_allocation_rate());
 //cout << "========================= **** ***" << stats().cms_allocation_rate()
-//Shelan
+//ist14
 
 
   GenMarkSweep::invoke_at_safepoint(_cmsGen->level(),
@@ -2939,11 +2939,10 @@ void CMSCollector::checkpointRootsInitial() {
   assert(_collectorState == InitialMarking, "Wrong collector state");
   check_correct_thread_executing();
 
-  //Shelan
+  //ist14
    double rate = stats().cms_allocation_rate();
-   rate = 100;
    TraceCMSMemoryManagerStats tms(_collectorState,GenCollectedHeap::heap()->gc_cause(), rate);
-   //Shelan
+   //ist14
 
   save_heap_summary();
   report_heap_summary(GCWhen::BeforeGC);
@@ -4272,11 +4271,10 @@ void CMSCollector::checkpointRootsFinal() {
   assert(SafepointSynchronize::is_at_safepoint(),
          "world should be stopped");
 
-  //shelan
+  //ist14
   double rate = stats().cms_allocation_rate();
-  rate = 200;
  TraceCMSMemoryManagerStats tms(_collectorState,GenCollectedHeap::heap()->gc_cause(), rate);
- //shelan
+ //ist14
 
   verify_work_stacks_empty();
   verify_overflow_empty();
@@ -5561,12 +5559,10 @@ void CMSCollector::sweep() {
   verify_overflow_empty();
   increment_sweep_count();
 
-  //Shelan
+  //ist14
   double rate = stats().cms_allocation_rate();
-  rate = 5000;
-  rate = stats().promotion_rate();
   TraceCMSMemoryManagerStats tms(_collectorState,GenCollectedHeap::heap()->gc_cause(), rate);
-  //Shelan
+  //ist14
 
   _inter_sweep_timer.stop();
   _inter_sweep_estimate.sample(_inter_sweep_timer.seconds());
@@ -8516,7 +8512,7 @@ size_t MarkDeadObjectsClosure::do_blk(HeapWord* addr) {
   return res;
 }
 
-//Shelan
+//ist14
 TraceCMSMemoryManagerStats::TraceCMSMemoryManagerStats(CMSCollector::CollectorState phase, GCCause::Cause cause, double allocRate): TraceMemoryManagerStats() {
 
   switch (phase) {

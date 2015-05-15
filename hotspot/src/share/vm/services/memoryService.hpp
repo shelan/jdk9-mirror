@@ -30,12 +30,12 @@
 #include "runtime/handles.hpp"
 #include "services/memoryUsage.hpp"
 #include "gc_interface/gcCause.hpp"
- //Shelan
+ //ist14
 //#include "gc_implementation/concurrentMarkSweep/concurrentMarkSweepGeneration.hpp"
 
 // Forward declaration
 class MemoryPool;
-//Shelan
+//ist14
 class CMSStats;
 class MemoryManager;
 class GCMemoryManager;
@@ -164,7 +164,7 @@ public:
   static void gc_end(bool fullGC, bool recordPostGCUsage,
                      bool recordAccumulatedGCTime,
                      bool recordGCEndTime, bool countCollection,
-                     //Shelan
+                     //ist14
                      GCCause::Cause cause, double allocRate);
 
 
@@ -195,14 +195,14 @@ private:
   bool         _recordAccumulatedGCTime;
   bool         _recordGCEndTime;
   bool         _countCollection;
-  //Shelan
+  //ist14
   double       _allocationRate;
   GCCause::Cause _cause;
 public:
   TraceMemoryManagerStats() {}
   TraceMemoryManagerStats(bool fullGC,
                           GCCause::Cause cause,
-//Shelan
+//ist14
                          double allocationRate,
                          bool recordGCBeginTime = true,
                           bool recordPreGCUsage = true,
@@ -224,7 +224,7 @@ public:
 
   void initialize(bool fullGC,
                   GCCause::Cause cause,
-                  //Shelan
+                  //ist14
                   double allocationRate,
                   bool recordGCBeginTime,
                   bool recordPreGCUsage,

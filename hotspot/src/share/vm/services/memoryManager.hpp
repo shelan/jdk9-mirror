@@ -48,7 +48,7 @@ private:
 
   MemoryPool* _pools[max_num_pools];
   int         _num_pools;
-  //Shelan
+  //ist14
   double      _allocation_rate;
  
 
@@ -58,10 +58,10 @@ protected:
 public:
   MemoryManager();
 
-//Shelan
+//ist14
  void set_allocation_rate(double rate) { _allocation_rate = rate; }
  double get_allocation_rate()          { return _allocation_rate; }
-//Shelan
+//ist14
  
   int num_memory_pools() const           { return _num_pools; }
   MemoryPool* get_memory_pool(int index) {
